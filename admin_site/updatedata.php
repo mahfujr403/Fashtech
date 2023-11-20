@@ -13,7 +13,7 @@ $sql = "UPDATE all_products SET image = '{$p_image}', brand = '{$p_brand}',name 
 $result = mysqli_query($conn, $sql) or die("QUery Unsessful");
 
 
-header("location:http://localhost:3000/admin_panel.php?message=Product id $p_id has updated successfully");
+header("location:http://localhost:3000/admin_site/admin_panel.php?message=Product id $p_id has updated successfully");
 
 mysqli_close($conn);
 ?>

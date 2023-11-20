@@ -25,16 +25,16 @@ if (isset($_GET['message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Panel</title>
     <link rel="stylesheet" href="admin_product.css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../user_site/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
 </head>
 
 <body>
     <div class="sidebar active">
         <div class="logo_content">
-            <a href="index.php">
+            <a href="../user_site/index.php">
                 <div class="logo">
-                    <div class="logo_name"><img src="img/logo.png" /></div>
+                    <div class="logo_name"><img src="../img/logo.png" /></div>
                 </div>
             </a>
             <i class="fa-solid fa-ellipsis" id="btn"></i>
@@ -106,7 +106,7 @@ if (isset($_GET['message'])) {
             <li>
                 <div>
                     <a href="#">
-                        <img src="img/people/1.png" width="50px" alt="">
+                        <img src="../img/people/1.png" width="50px" alt="">
                         <span class="links_name">Mahfuj</span>
                     </a>
                     <span class="tooltip">Mahfuj</span>
@@ -137,7 +137,7 @@ if (isset($_GET['message'])) {
                         while ($row = mysqli_fetch_assoc($result)) { ?>
                             <tr>
                                 <td>
-                                    <img src="img/products/<?php echo $row["image"] ?>" alt="">
+                                    <img src="../img/products/<?php echo $row["image"] ?>" alt="">
                                 </td>
                                 <td><?php echo $row["brand"] ?></td>
                                 <td><?php echo $row["name"] ?></td>
@@ -165,8 +165,8 @@ if (isset($_GET['message'])) {
         </section>
     </div>
 
-  
-    
+
+
     <script src="popupmessage.js"></script>
     <script src="navbar.js"></script>
 </body>

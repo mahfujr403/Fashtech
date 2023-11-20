@@ -2,16 +2,14 @@
 
 $conn = new  mysqli('localhost', 'root', '', 'others');
 
-$sql = "SELECT * FROM about_page";
+$sql = "SELECT * FROM contact_page";
 $item  = $conn->query($sql);
 
-$sql1 = "SELECT * FROM app_video";
-$vdo  = $conn->query($sql1);
 
-$feature_img = "SELECT * FROM  feature";
-$feature  = $conn->query($feature_img);
+$sql1 = "SELECT * FROM cp_people";
+$people  = $conn->query($sql1);
 
-require_once("get_cart.php");
+require_once("get_cart.php")
 ?>
 
 <!DOCTYPE html>
@@ -27,23 +25,23 @@ require_once("get_cart.php");
 
 <body>
     <section id="header">
-        <a href="index.php"><img src="img/logo.png" class="logo" alt /></a>
+        <a href="index.php"><img src="../img/logo.png" class="logo" alt /></a>
 
         <div>
             <ul id="navbar">
                 <li><a href="index.php"> Home</a></li>
                 <li><a href="shop.php"> Shop</a></li>
                 <li><a href="blog.php"> Blog</a></li>
-                <li><a class="active" href="about.php"> About</a></li>
-                <li><a href="contact.php"> Contact</a></li>
+                <li><a href="about.php"> About</a></li>
+                <li><a class="active" href="contact.php"> Contact</a></li>
                 <li>
                     <a href="cart.php">
                         <i class="fa-solid fa-bag-shopping"></i>
-                            <?php
-                            if ($cartItemCount > 0) {
-                                echo '<span class="count">' . $cartItemCount . '</span>';
-                            } 
-                            ?>        
+                        <?php
+                        if ($cartItemCount > 0) {
+                            echo '<span class="count">' . $cartItemCount . '</span>';
+                        }
+                        ?>
                     </a>
                 </li>
             </ul>
@@ -51,53 +49,65 @@ require_once("get_cart.php");
     </section>
 
     <section id="page-header" class="about-header">
-        <h2>#Know about Us</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil, culpa?</p>
+        <h2>#We Are Here</h2>
+        <p>LEAVE A MESSAGE, We love to hear from you!</p>
     </section>
 
-    <section id="about-head" class="section-p1">
-        <?php
-        while ($row = mysqli_fetch_assoc($item)) {
-        ?>
-            <img src="<?php echo $row["image"] ?>" alt="">
+    <section id="contact-details" class="section-p1">
+        <div class="details">
+            <span>GET IN TOUCH</span>
+            <h2>Visit one of our outlate locations or contact us today</h2>
+            <h3>Head Office</h3>
             <div>
-                <h2><?php echo $row["heading"] ?></h2>
-                <p><?php echo $row["detail"] ?></p>
-                <abbr title=""><?php echo $row["abbr"] ?></abbr>
-                <br><br>
-                <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%"><?php echo $row["abbr"] ?></marquee>
+                <?php
+                while ($row = mysqli_fetch_assoc($item)) {
+                ?>
+                    <li>
+                        <?php echo $row["icon"] ?>
+                        <p><?php echo $row["address"] ?></p>
+                    </li>
+                <?php
+                }
+                ?>
             </div>
-
-        <?php
-        }
-        ?>
-
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.
+                    23910368289!2d88.59932701142266!3d24.372984278160043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+                    1!3m3!1m2!1s0x39fbefad023fd3b5%3A0x91e5843fe8317ba2!2sTheme%20Omor%20Plaza!5e0!3m2!1sen!2sbd!4v1699691218113!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
     </section>
 
-    <section id="about-app" class="section-p1">
-        <h1>Download Our <a href="#">App</a></h1>
-        <?php
-        while ($row1 = mysqli_fetch_assoc($vdo)) {
-        ?>
-            <div class="video">
-                <video autoplay muted loop src="<?php echo $row1["video"] ?>"></video>
-            </div>
-        <?php
-        }
-        ?>
-    </section>
+    <section id="form-details" class="section-p1">
+        <form action="">
+            <span>LEAVE A MESSAGE</span>
+            <h2>We love to hear from you</h2>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <input type="text" placeholder="subject">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
+            <button class="normal">Submit</button>
+        </form>
 
-    <section id="feature" class="section-p1">
-        <?php
-        while ($row = mysqli_fetch_assoc($feature)) {
-        ?>
-            <div class="fe-box">
-                <img src="<?php echo $row["image"] ?>" alt="">
-                <h6><?php echo $row["name"] ?></h6>
+
+        <div class="people">
+            <div>
+                <?php
+                while ($row = mysqli_fetch_assoc($people)) {
+                ?>
+                    <div>
+                        <img src="../<?php echo $row["image"] ?>" alt="">
+                        <p><span><?php echo $row["name"] ?></span> <?php echo $row["designation"] ?>
+                            <br> <?php echo $row["phone"] ?> <br> <?php echo $row["email"] ?>
+                        </p>
+                    </div>
+
+                <?php
+                }
+                ?>
             </div>
-        <?php
-        }
-        ?>
+
     </section>
 
     <section id="newsletter" class="section-p1">
@@ -118,7 +128,7 @@ require_once("get_cart.php");
 
     <footer class="section-p1">
         <div class="col">
-            <img src="img/logo.png" class="logo" />
+            <img src="../img/logo.png" class="logo" />
             <h4>Contact</h4>
             <p><strong>Address: </strong>Shaheb Bazar, Rajshahi</p>
             <p><strong>Phone: </strong>01771431724, 01521768694</p>
@@ -157,18 +167,17 @@ require_once("get_cart.php");
             <h4>Install app</h4>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <img src="img/pay/app.jpg" />
-                <img src="img/pay/play.jpg" />
+                <img src="../img/pay/app.jpg" />
+                <img src="../img/pay/play.jpg" />
             </div>
             <div>
                 <p>Secured payment gateway</p>
-                <img src="img/pay/pay.png" />
+                <img src="../img/pay/pay.png" />
             </div>
         </div>
     </footer>
 
     <script src="get_cart.js"></script>
-
 </body>
 
 </html>

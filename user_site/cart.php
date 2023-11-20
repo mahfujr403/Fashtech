@@ -26,7 +26,7 @@ $cartItemCount = mysqli_num_rows($item);
 
 <body>
     <section id="header">
-        <a href="index.php"><img src="img/logo.png" class="logo" alt /></a>
+        <a href="index.php"><img src="../img/logo.png" class="logo" alt /></a>
 
         <div>
             <ul id="navbar">
@@ -78,7 +78,7 @@ $cartItemCount = mysqli_num_rows($item);
                                     </button>
                                 </td>
                                 <td>
-                                    <img src="img/products/<?php echo $row["image"] ?>" alt="">
+                                    <img src="../img/products/<?php echo $row["image"] ?>" alt="">
                                 </td>
                                 <td><?php echo $row["name"] ?></td>
                                 <td>৳<?php echo $row["price"] ?></td>
@@ -166,7 +166,7 @@ $cartItemCount = mysqli_num_rows($item);
 
     <footer class="section-p1">
         <div class="col">
-            <img src="img/logo.png" class="logo" />
+            <img src="../img/logo.png" class="logo" />
             <h4>Contact</h4>
             <p><strong>Address: </strong>Shaheb Bazar, Rajshahi</p>
             <p><strong>Phone: </strong>01771431724, 01521768694</p>
@@ -205,12 +205,12 @@ $cartItemCount = mysqli_num_rows($item);
             <h4>Install app</h4>
             <p>From App Store or Google Play</p>
             <div class="row">
-                <img src="img/pay/app.jpg" />
-                <img src="img/pay/play.jpg" />
+                <img src="../img/pay/app.jpg" />
+                <img src="../img/pay/play.jpg" />
             </div>
             <div>
                 <p>Secured payment gateway</p>
-                <img src="img/pay/pay.png" />
+                <img src="../img/pay/pay.png" />
             </div>
         </div>
     </footer>

@@ -12,6 +12,6 @@ $sql = "INSERT INTO all_products(image,brand,name,price,rating) VALUES ('{$p_ima
 $result = mysqli_query($conn, $sql) or die("QUery Unsessful");
 
 
-header("location:http://localhost:3000/admin_panel.php?message=$p_name has added in database successfully");
+header("location:http://localhost:3000/admin_site/admin_panel.php?message=$p_name has added in database successfully");
 
 mysqli_close($conn);

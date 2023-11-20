@@ -23,7 +23,7 @@ require_once("get_cart.php");
 
 <body>
   <section id="header">
-    <a href="index.php"><img src="img/logo.png" class="logo" alt /></a>
+    <a href="index.php"><img src="../img/logo.png" class="logo" alt /></a>
 
     <div>
       <ul id="navbar">
@@ -46,10 +46,10 @@ require_once("get_cart.php");
         </li>
         <li class="admin-panel-container">
           <a href="#">
-            <img src="img/people/1.png" width="35px">
+            <img src="../img/people/1.png" width="35px">
           </a>
           <div class="admin-dropdown">
-            <a href="admin_panel.php">Continue as Admin</a>
+            <a href="../admin_site/admin_panel.php">Continue as Admin</a>
           </div>
         </li>
       </ul>
@@ -66,27 +66,27 @@ require_once("get_cart.php");
 
   <section id="feature" class="section-p1">
     <div class="fe-box">
-      <img src="img\features\f1.png" alt="" />
+      <img src="../img\features\f1.png" alt="" />
       <h6>Free Shipping</h6>
     </div>
     <div class="fe-box">
-      <img src="img\features\f2.png" alt="" />
+      <img src="../img\features\f2.png" alt="" />
       <h6>Online Order</h6>
     </div>
     <div class="fe-box">
-      <img src="img\features\f3.png" alt="" />
+      <img src="../img\features\f3.png" alt="" />
       <h6>Save Moneyg</h6>
     </div>
     <div class="fe-box">
-      <img src="img\features\f4.png" alt="" />
+      <img src="../img\features\f4.png" alt="" />
       <h6>Promotions</h6>
     </div>
     <div class="fe-box">
-      <img src="img\features\f5.png" alt="" />
+      <img src="../img\features\f5.png" alt="" />
       <h6>Happy Sell</h6>
     </div>
     <div class="fe-box">
-      <img src="img\features\f6.png" alt="" />
+      <img src="../img\features\f6.png" alt="" />
       <h6>F24/7 Support</h6>
     </div>
 
@@ -238,7 +238,7 @@ require_once("get_cart.php");
 
   <footer class="section-p1">
     <div class="col">
-      <img src="img/logo.png" class="logo" />
+      <img src="../img/logo.png" class="logo" />
       <h4>Contact</h4>
       <p><strong>Address: </strong>Shaheb Bazar, Rajshahi</p>
       <p><strong>Phone: </strong>01771431724, 01521768694</p>
@@ -277,12 +277,12 @@ require_once("get_cart.php");
       <h4>Install app</h4>
       <p>From App Store or Google Play</p>
       <div class="row">
-        <img src="img/pay/app.jpg" />
-        <img src="img/pay/play.jpg" />
+        <img src="../img/pay/app.jpg" />
+        <img src="../img/pay/play.jpg" />
       </div>
       <div>
         <p>Secured payment gateway</p>
-        <img src="img/pay/pay.png" />
+        <img src="../img/pay/pay.png" />
       </div>
     </div>
   </footer>
