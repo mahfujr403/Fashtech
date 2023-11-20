@@ -26,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($password, $row['password'])) {
             header("location:admin_panel.php");
         } else {
-            echo "Incorrect password.";
+            $message = "Incorrect Password";
         }
     } else {
-        echo "User not found.";
+        $message = "User not found.";
     }
     if (isset($_GET['message'])) {
         $message = $_GET['message'];
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $conn->close();
 }
-    // Close the database connection
+// Close the database connection
 ?>
 
 
@@ -58,7 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="container">
-
+        <?php if (!empty($message)) : ?>
+            <div class="message <?php echo strpos($message, 'successful') !== false ? 'success' : 'error'; ?>">
+                <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
         <form action="login_page.php" method="post">
             <div class="form-group">
                 <label for="email">Email:</label>

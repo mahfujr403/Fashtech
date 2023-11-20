@@ -1,7 +1,5 @@
 <?php
-
-@include 'config.php';
-
+$conn = new mysqli('localhost', 'root', '', 'author');
 session_start();
 session_unset();
 session_destroy();
