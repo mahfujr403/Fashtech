@@ -9,6 +9,9 @@ $sql_cart = "SELECT * FROM cart";
 $cartItem  = $conn->query($sql_cart);
 
 
+
+
+
 if (isset($_GET['message'])) {
     $message = $_GET['message'];
     echo "<div class='update-message'><span id='close-message'>&times;</span><P>$message</P></div>";

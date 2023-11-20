@@ -49,7 +49,7 @@ require_once("get_cart.php");
             <img src="../img/people/1.png" width="35px">
           </a>
           <div class="admin-dropdown">
-            <a href="../admin_site/admin_panel.php">Continue as Admin</a>
+            <a href="../admin_site/login_page.php">Continue as Admin</a>
           </div>
         </li>
       </ul>

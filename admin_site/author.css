@@ -1,0 +1,108 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.102);
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #45a049;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.error {
+    background-color: #ff5252;
+    color: #fff;
+}
+
+
+.update-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    background-color: #4caf50; /* Change the background color as needed */
+    color: #fff;
+}
+
+#close-message {
+    float: right;
+    cursor: pointer;
+}
+
+.update-message {
+ 
+  width: auto;
+  height: 40px;
+    color: green;
+    font-weight: bold;
+    background-color: #DFF2BF;
+    display: flex;
+   justify-content: start;
+}
+
+.update-message span{
+  padding-top: 13px;
+  padding-left: 5px;
+  padding-left: 20%;
+}
+.update-message p{
+  padding-left: 25%;
+}
+#close-message {
+    cursor: pointer;
+}

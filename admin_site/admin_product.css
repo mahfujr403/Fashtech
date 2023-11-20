@@ -477,3 +477,13 @@ body {
 #close-message {
     cursor: pointer;
 }
+
+
+.loginpage{
+ margin-top: 150px;
+}
+
+.loginpage h3{
+  font-size: 30px;
+  
+}

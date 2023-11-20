@@ -99,7 +99,7 @@
 
     <div class="home_content">
         <h2>Admin Panel</h2>
-        <h3>Add New Record</h2>
+        <h3>Add New Record</h3>
             <form class="post-form" action="savedata.php" method="post">
 
                 <div class="form-group">
