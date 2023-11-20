@@ -79,7 +79,7 @@
                     <span class="tooltip">Accounts</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="logout.php">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="links_name">Sign Out</span>
                     </a>
