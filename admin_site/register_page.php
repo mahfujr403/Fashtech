@@ -1,7 +1,5 @@
     <?php
-    // Check if the form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Collect form data
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirm_password'];

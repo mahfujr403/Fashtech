@@ -27,6 +27,7 @@ for (var i = 0; i < product_id.length; i++) {
     xhr.onload = function () {
       if (xhr.status === 200) {
         target.textContent = "Added to Cart";
+        target.disabled = true;
         console.log(add_name + "is added to cart successfully");
       } else {
         console.error("Failed to add product:", xhr.statusText);
