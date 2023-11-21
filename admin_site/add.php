@@ -100,30 +100,29 @@
     <div class="home_content">
         <h2>Admin Panel</h2>
         <h3>Add New Record</h3>
-            <form class="post-form" action="savedata.php" method="post">
-
-                <div class="form-group">
-                    <label>Image</label>
-                    <input type="text" name="pimage" required />
-                </div>
-                <div class="form-group">
-                    <label>Brand</label>
-                    <input type="text" name="pbrand" required />
-                </div>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="pname" required />
-                </div>
-                <div class="form-group">
-                    <label>Price</label>
-                    <input type="text" name="pprice" required />
-                </div>
-                <div class="form-group">
-                    <label>Rating</label>
-                    <input type="text" name="prating" required />
-                </div>
-                <input class="submit" type="submit" value="Save" />
-            </form>
+        <form class="post-form" action="savedata.php" method="post">
+            <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="pimage" accept="image/*" required />
+            </div>
+            <div class="form-group">
+                <label>Brand</label>
+                <input type="text" name="pbrand" required />
+            </div>
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="pname" required />
+            </div>
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" name="pprice" required />
+            </div>
+            <div class="form-group">
+                <label>Rating</label>
+                <input type="text" name="prating" required />
+            </div>
+            <input class="submit" type="submit" value="Save" />
+        </form>
     </div>
 
     <script src="navbar.js"></script>
