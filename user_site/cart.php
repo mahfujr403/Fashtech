@@ -45,6 +45,14 @@ $cartItemCount = mysqli_num_rows($item);
                         ?>
                     </a>
                 </li>
+                <li class="admin-panel-container">
+                    <a href="#">
+                        <img src="../img/people/1.png" width="35px">
+                    </a>
+                    <div class="admin-dropdown">
+                        <a href="../admin_site/login_page.php">Continue as Admin</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </section>

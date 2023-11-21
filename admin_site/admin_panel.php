@@ -92,11 +92,11 @@ if (isset($_GET['message'])) {
             </li>
 
             <li>
-                <a href="#">
+                <a href="update_password.php">
                     <i class="fa-solid fa-file-invoice"></i>
-                    <span class="links_name">Accounts</span>
+                    <span class="links_name">Change Password</span>
                 </a>
-                <span class="tooltip">Accounts</span>
+                <span class="tooltip">Change Password</span>
             </li>
             <li>
                 <a href="logout.php">

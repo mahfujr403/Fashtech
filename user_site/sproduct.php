@@ -35,6 +35,7 @@ $sql_featured = "SELECT * FROM all_products";
 $item  = $conn->query($sql_featured);
 
 
+require_once("get_cart.php")
 
 ?>
 
@@ -53,7 +54,7 @@ $item  = $conn->query($sql_featured);
 
 <body>
   <section id="header">
-    <a href="index.php"><img src="img/logo.png" class="logo" alt /></a>
+    <a href="index.php"><img src="../img/logo.png" class="logo" alt /></a>
 
     <div>
       <ul id="navbar">
@@ -65,6 +66,11 @@ $item  = $conn->query($sql_featured);
         <li>
           <a href="cart.php">
             <i class="fa-solid fa-bag-shopping"></i>
+            <?php
+            if ($cartItemCount > 0) {
+              echo '<span class="count">' . $cartItemCount . '</span>';
+            }
+            ?>
           </a>
         </li>
       </ul>
@@ -73,20 +79,20 @@ $item  = $conn->query($sql_featured);
 
   <section id="prodetails" class="section-p1">
     <div class="single-pro-img">
-      <img src="img/products/<?php echo $product["image"]; ?>" width="100%" height="70%" id="MainImg" />
+      <img src="../img/products/<?php echo $product["image"]; ?>" width="100%" height="70%" id="MainImg" />
       <!-- ... other product images ... -->
       <div class="small-img-group">
         <div class="small-img-col">
-          <img src="img/products/f1.jpg" width="100%" height="70%" class="small-img" />
+          <img src="../img/products/f1.jpg" width="100%" height="70%" class="small-img" />
         </div>
         <div class="small-img-col">
-          <img src="img/products/f2.jpg" width="100%" height="70%" class="small-img" />
+          <img src="../img/products/f2.jpg" width="100%" height="70%" class="small-img" />
         </div>
         <div class="small-img-col">
-          <img src="img/products/f3.jpg" width="100%" height="70%" class="small-img" />
+          <img src="../img/products/f3.jpg" width="100%" height="70%" class="small-img" />
         </div>
         <div class="small-img-col">
-          <img src="img/products/f4.jpg" width="100%" height="70%" class="small-img" />
+          <img src="../img/products/f4.jpg" width="100%" height="70%" class="small-img" />
         </div>
       </div>
     </div>
@@ -128,7 +134,7 @@ $item  = $conn->query($sql_featured);
         $p++;
       ?>
         <div class="pro">
-          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="img\products\<?php echo $row["image"] ?>" alt="" />
+          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="../img/products/<?php echo $row["image"] ?>" alt="" />
           <div onclick="window.location.href='sproduct.php'" class="des">
             <span><?php echo $row["brand"] ?></span>
             <h5><?php echo $row["name"] ?></h5>
@@ -178,7 +184,7 @@ $item  = $conn->query($sql_featured);
 
   <footer class="section-p1">
     <div class="col">
-      <img src="img/logo.png" class="logo" />
+      <img src="../img/logo.png" class="logo" />
       <h4>Contact</h4>
       <p><strong>Address: </strong>Shaheb Bazar, Rajshahi</p>
       <p><strong>Phone: </strong>01771431724, 01521768694</p>
@@ -217,16 +223,17 @@ $item  = $conn->query($sql_featured);
       <h4>Install app</h4>
       <p>From App Store or Google Play</p>
       <div class="row">
-        <img src="img/pay/app.jpg" />
-        <img src="img/pay/play.jpg" />
+        <img src="../img/pay/app.jpg" />
+        <img src="../img/pay/play.jpg" />
       </div>
       <div>
         <p>Secured payment gateway</p>
-        <img src="img/pay/pay.png" />
+        <img src="../img/pay/pay.png" />
       </div>
     </div>
   </footer>
 
+  <script src="get_cart.js"></script>
   <script src="sproduct.js"></script>
   <script src="sendtoserver.js"></script>
 

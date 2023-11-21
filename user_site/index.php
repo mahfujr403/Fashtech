@@ -66,27 +66,27 @@ require_once("get_cart.php");
 
   <section id="feature" class="section-p1">
     <div class="fe-box">
-      <img src="../img\features\f1.png" alt="" />
+      <img src="../img/features/f1.png" alt="" />
       <h6>Free Shipping</h6>
     </div>
     <div class="fe-box">
-      <img src="../img\features\f2.png" alt="" />
+      <img src="../img/features/f2.png" alt="" />
       <h6>Online Order</h6>
     </div>
     <div class="fe-box">
-      <img src="../img\features\f3.png" alt="" />
+      <img src="../img/features/f3.png" alt="" />
       <h6>Save Moneyg</h6>
     </div>
     <div class="fe-box">
-      <img src="../img\features\f4.png" alt="" />
+      <img src="../img/features/f4.png" alt="" />
       <h6>Promotions</h6>
     </div>
     <div class="fe-box">
-      <img src="../img\features\f5.png" alt="" />
+      <img src="../img/features/f5.png" alt="" />
       <h6>Happy Sell</h6>
     </div>
     <div class="fe-box">
-      <img src="../img\features\f6.png" alt="" />
+      <img src="../img/features/f6.png" alt="" />
       <h6>F24/7 Support</h6>
     </div>
 
@@ -106,7 +106,7 @@ require_once("get_cart.php");
         $p++;
       ?>
         <div class="pro">
-          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="img\products\<?php echo $row["image"] ?>" alt="" />
+          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="../img/products/<?php echo $row["image"] ?>" alt="" />
           <div onclick="window.location.href='sproduct.php'" class="des">
             <span><?php echo $row["brand"] ?></span>
             <h5><?php echo $row["name"] ?></h5>
@@ -157,7 +157,7 @@ require_once("get_cart.php");
       while ($row = mysqli_fetch_assoc($item)) {
       ?>
         <div class="pro">
-          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="img\products\<?php echo $row["image"] ?>" alt="" />
+          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="../img/products/<?php echo $row["image"] ?>" alt="" />
           <div onclick="window.location.href='sproduct.php'" class="des">
             <span name="add_brand"><?php echo $row["brand"] ?></span>
             <h5><?php echo $row["name"] ?></h5>

@@ -44,6 +44,14 @@ require_once("get_cart.php")
             ?>
           </a>
         </li>
+        <li class="admin-panel-container">
+          <a href="#">
+            <img src="../img/people/1.png" width="35px">
+          </a>
+          <div class="admin-dropdown">
+            <a href="../admin_site/login_page.php">Continue as Admin</a>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
@@ -61,7 +69,7 @@ require_once("get_cart.php")
       while ($row = mysqli_fetch_assoc($item)) {
       ?>
         <div class="pro">
-          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="img\products\<?php echo $row["image"] ?>" alt="" />
+          <img onclick="window.location.href='sproduct.php?id=<?php echo $row["id"] ?>'" src="../img/products/<?php echo $row["image"] ?>" alt="" />
           <div onclick="window.location.href='sproduct.php'" class="des">
             <span><?php echo $row["brand"] ?></span>
             <h5><?php echo $row["name"] ?></h5>

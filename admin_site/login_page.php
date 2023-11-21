@@ -31,14 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $message = "User not found.";
     }
-    if (isset($_GET['message'])) {
-        $message = $_GET['message'];
-        echo "<div class='update-message'><span id='close-message'>&times;</span><P>$message</P></div>";
-        unset($_GET['message']);
-    }
-
 
     $conn->close();
+
+    if (isset($_GET['message'])) {
+        $message = $_GET['message'];
+    }
 }
 // Close the database connection
 ?>
@@ -58,11 +56,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="container">
-        <?php if (!empty($message)) : ?>
-            <div class="message <?php echo strpos($message, 'successful') !== false ? 'success' : 'error'; ?>">
-                <?php echo $message; ?>
-            </div>
-        <?php endif; ?>
+        <?php
+
+        if (isset($_GET['message'])) {
+            $message = $_GET['message'];
+            echo "<div class='update-message'><span id='close-message'>&times;</span><P>$message</P></div>";
+            unset($_GET['message']);
+        }
+        ?>
+
+        <h2>Login Now</h2>
+       
         <form action="login_page.php" method="post">
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -76,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <input type="submit" value="Register" class="submit">
             </div>
-            <p>don't have an account? <a href="register_page.php">register now!</a></p>
+            <p>don't have an account? <a href="register_page.php">register now</a></p>
         </form>
 
     </div>
