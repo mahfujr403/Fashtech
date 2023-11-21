@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM admin_info WHERE email = '$email'";
+    $sql = "SELECT * FROM user_info WHERE email = '$email'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="author.css">
-    <title>Admin Login</title>
+    <link rel="stylesheet" href="../../admin_site/author.css">
+    <title>User Login</title>
 </head>
 
 <body>
@@ -62,8 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
 
         <h2>Login Now</h2>
-       
-        <form action="login_page.php" method="post">
+
+        <form action="user_login.php" method="post">
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" name="email" required>
@@ -76,11 +76,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <input type="submit" value="Register" class="submit">
             </div>
-            <p>don't have an account? <a href="register_page.php">register now</a></p>
+            <p>don't have an account? <a href="user_register.php">register now</a></p>
         </form>
 
     </div>
-    <script src="popupmessage.js"></script>
+    <script src="../../admin_site/popupmessage.js"></script>
 </body>
 
 </html>

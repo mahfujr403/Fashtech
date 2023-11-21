@@ -118,14 +118,10 @@ $cartItemCount = mysqli_num_rows($item);
     <section class="section-p1" id="cart-add">
         <div id="coupon">
             <h3>Apply Coupon</h3>
-
-            <!-- Inside the #coupon div -->
             <div>
                 <input type="text" id="coupon-input" placeholder="Enter your coupon">
                 <button class="normal" onclick="applyCoupon()">Apply</button>
             </div>
-
-
         </div>
 
         <div id="subtotal">
@@ -151,11 +147,12 @@ $cartItemCount = mysqli_num_rows($item);
             </table>
             <?php
             if (mysqli_num_rows($item) > 0) {
-                echo ' <button class="normal">Proceed to Checkout</button>';
+                echo '<a href="/user_site/user_authorize/user_login.php"> <button class="normal">Proceed to Checkout</button></a>';
             }
             ?>
         </div>
 
+        
     </section>
 
     <section id="newsletter" class="section-p1">

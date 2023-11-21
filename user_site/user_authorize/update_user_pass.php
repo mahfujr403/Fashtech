@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($newPassword != $confirmPassword) {
         $message = "Passwords do not match.";
     } else {
-        $sql = "SELECT * FROM admin_info WHERE email = '$userEmail'";
+        $sql = "SELECT * FROM user_info WHERE email = '$userEmail'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -25,9 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (password_verify($oldPassword, $row['password'])) {
                 $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-                $updateQuery = "UPDATE admin_info SET password = '$hashedNewPassword' WHERE email = '$userEmail'";
+                $updateQuery = "UPDATE user_info SET password = '$hashedNewPassword' WHERE email = '$userEmail'";
                 if ($conn->query($updateQuery) === TRUE) {
-                    header("location:http://localhost:3000/admin_site/login_page.php?message=Password updated!");
+                    header("location:http://localhost:3000/user_site/user_authorize/user_login.php?message=Password updated!");
                 } else {
                     $message = "Error updating password: " . $conn->error;
                 }
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="author.css">
+    <link rel="stylesheet" href="../../admin_site/author.css">
     <title>Update Password</title>
 </head>
 
@@ -63,9 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php echo $message; ?>
             </div>
         <?php endif; ?>
-        <form action="update_password.php" method="post">
+        <form action="update_user_pass.php" method="post">
             <div class="form-group">
-                <label for="user_email">Admin Email:</label>
+                <label for="user_email">User Email:</label>
                 <input type="email" name="user_email" required>
             </div>
 
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </form>
     </div>
-    <script src="popupmessage.js"></script>
+    <script src="../../admin_site/popupmessage.js"></script>
 </body>
 
 </html>
