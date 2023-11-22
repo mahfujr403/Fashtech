@@ -1,6 +1,9 @@
 <?php
-
+ session_start();
+ 
 $conn = new  mysqli('localhost', 'root', '', 'product');
+
+$userLoggedIn = isset($_SESSION['user_id']);
 
 $sql_cart = "SELECT * FROM cart";
 $item  = $conn->query($sql_cart);
@@ -46,7 +49,7 @@ $cartItemCount = mysqli_num_rows($item);
                     </a>
                 </li>
                 <li class="admin-panel-container">
-                    <a href="#">
+                    <a href="user_authorize/user_login.php">
                         <img src="../img/people/1.png" width="35px">
                     </a>
                     <div class="admin-dropdown">
@@ -146,13 +149,15 @@ $cartItemCount = mysqli_num_rows($item);
 
             </table>
             <?php
-            if (mysqli_num_rows($item) > 0) {
-                echo '<a href="/user_site/user_authorize/user_login.php"> <button class="normal">Proceed to Checkout</button></a>';
+            if ($userLoggedIn && mysqli_num_rows($item) > 0) {
+                echo '<a href="index.php"> <button class="normal">Proceed to Checkout</button></a>';
+            } elseif (!$userLoggedIn && mysqli_num_rows($item) > 0) {
+                echo '<a href="user_authorize/user_login.php"> <button class="normal">Login to Checkout</button></a>';
             }
             ?>
         </div>
 
-        
+
     </section>
 
     <section id="newsletter" class="section-p1">

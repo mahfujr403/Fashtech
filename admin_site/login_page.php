@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-
+$message = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -52,12 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
     <div class="container">
-        <?php
+        
 
-        if (isset($_GET['message'])) {
-            $message = $_GET['message'];
-            echo "<div class='update-message'><span id='close-message'>&times;</span><P>$message</P></div>";
-            unset($_GET['message']);
+       <?php
+        if (!empty($message)) {
+            echo "<div class='update-message'><span id='close-message'>&times;</span><p>$message</p></div>";
         }
         ?>
 

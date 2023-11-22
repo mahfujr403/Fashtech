@@ -75,11 +75,11 @@ input {
  
   width: 100%;
   height: 40px;
-    color: green;
+    color: rgb(208, 16, 16);
     font-weight: bold;
     background-color: #DFF2BF;
     display: flex;
-   justify-content: start;
+   justify-content: start;  
 }
 
 .update-message span{

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$message = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -21,7 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $row = $result->fetch_assoc();
 
         if (password_verify($password, $row['password'])) {
-            header("location:admin_panel.php");
+            $_SESSION['user_id'] = $row['email'];
+            header("location:http://localhost:3000/user_site/cart.php");
         } else {
             $message = "Incorrect Password";
         }
@@ -53,11 +54,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <div class="container">
         <?php
-
-        if (isset($_GET['message'])) {
-            $message = $_GET['message'];
-            echo "<div class='update-message'><span id='close-message'>&times;</span><P>$message</P></div>";
-            unset($_GET['message']);
+        if (!empty($message)) {
+            echo "<div class='update-message'><span id='close-message'>&times;</span><p>$message</p></div>";
         }
         ?>
 
