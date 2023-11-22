@@ -2,6 +2,8 @@
 
 $conn = new  mysqli('localhost', 'root', '', 'product');
 
+$userLoggedIn = isset($_SESSION['user_id']);
+
 $sql_featured = "SELECT * FROM all_products";
 $item  = $conn->query($sql_featured);
 
@@ -45,7 +47,7 @@ require_once("get_cart.php")
           </a>
         </li>
         <li class="admin-panel-container">
-          <a href="#">
+          <a href="user_authorize/user_login.php">
             <img src="../img/people/1.png" width="35px">
           </a>
           <div class="admin-dropdown">

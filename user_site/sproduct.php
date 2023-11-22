@@ -1,28 +1,24 @@
 <?php
 
-// Establish a database connection
 $conn = new mysqli('localhost', 'root', '', 'product');
+$userLoggedIn = isset($_SESSION['user_id']);
 
-// Check the connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-// Retrieve the product ID from the URL parameter
+
 if (isset($_GET['id'])) {
   $product_id = $_GET['id'];
 
-  // Fetch product details from the database based on the product ID
   $sql_product = "SELECT * FROM all_products WHERE id = $product_id";
   $result_product = $conn->query($sql_product);
 
   if ($result_product->num_rows > 0) {
     $product = $result_product->fetch_assoc();
   } else {
-    // Handle the case when the product is not found
     echo "Product not found!";
   }
 } else {
-  // Handle the case when the ID parameter is not set
   echo "Product ID not provided!";
 }
 
@@ -73,6 +69,14 @@ require_once("get_cart.php")
             ?>
           </a>
         </li>
+        <li class="admin-panel-container">
+          <a href="user_authorize/user_login.php">
+            <img src="../img/people/1.png" width="35px">
+          </a>
+          <div class="admin-dropdown">
+            <a href="../admin_site/login_page.php">Continue as Admin</a>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
@@ -80,7 +84,6 @@ require_once("get_cart.php")
   <section id="prodetails" class="section-p1">
     <div class="single-pro-img">
       <img src="../img/products/<?php echo $product["image"]; ?>" width="100%" height="70%" id="MainImg" />
-      <!-- ... other product images ... -->
       <div class="small-img-group">
         <div class="small-img-col">
           <img src="../img/products/f1.jpg" width="100%" height="70%" class="small-img" />
@@ -101,7 +104,6 @@ require_once("get_cart.php")
       <h6><?php echo $product["brand"]; ?></h6>
       <h4><?php echo $product["name"]; ?></h4>
       <h2>৳<?php echo $product["price"]; ?></h2>
-      <!-- ... other product details ... -->
       <select>
         <option>Select Size</option>
         <option>S</option>
