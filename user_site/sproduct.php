@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $conn = new mysqli('localhost', 'root', '', 'product');
 $userLoggedIn = isset($_SESSION['user_id']);
@@ -118,7 +119,13 @@ require_once("get_cart.php")
         t-shirts are made with the finest quality polyester fabric, perfect
         for casual or sports wear. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum libero deserunt nihil labore itaque autem aliquid alias asperiores sapiente ipsa, amet et velit, doloremque possimus quod nesciunt, exercitationem suscipit delectus?</span>
 
-      <button class="add normal" data-id="<?php echo $product["id"] ?>" data-name="<?php echo $product["name"] ?>" data-brand="<?php echo $product["brand"] ?>" data-image="<?php echo $product["image"] ?>" data-price="<?php echo $product["price"] ?>" data-rating="<?php echo $product["rating"] ?>">Add to Cart</button>
+      <?php
+      if (!$userLoggedIn) {
+        echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button></a>';
+      } else {
+        echo '<button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button>';
+      }
+      ?>
     </div>
   </section>
 
@@ -160,7 +167,13 @@ require_once("get_cart.php")
             </div>
             <h4>৳<?php echo $row["price"] ?></h4>
           </div>
-          <button class="add normal" data-id="<?php echo $row["id"] ?>" data-name="<?php echo $row["name"] ?>" data-brand="<?php echo $row["brand"] ?>" data-image="<?php echo $row["image"] ?>" data-price="<?php echo $row["price"] ?>" data-rating="<?php echo $row["rating"] ?>">Add to Cart</button>
+          <?php
+          if (!$userLoggedIn) {
+            echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button></a>';
+          } else {
+            echo '<button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button>';
+          }
+          ?>
         </div>
       <?php
 

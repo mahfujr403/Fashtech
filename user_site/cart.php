@@ -1,7 +1,7 @@
 <?php
- session_start();
- 
-$conn = new  mysqli('localhost', 'root', '', 'product');
+session_start();
+
+$conn = new mysqli('localhost', 'root', '', 'product');
 
 $userLoggedIn = isset($_SESSION['user_id']);
 
@@ -53,6 +53,7 @@ $cartItemCount = mysqli_num_rows($item);
                         <img src="../img/people/1.png" width="35px">
                     </a>
                     <div class="admin-dropdown">
+                        <a href="../admin_site/logout.php">Log Out</a>
                         <a href="../admin_site/login_page.php">Continue as Admin</a>
                     </div>
                 </li>
@@ -155,6 +156,8 @@ $cartItemCount = mysqli_num_rows($item);
                 echo '<a href="user_authorize/user_login.php"> <button class="normal">Login to Checkout</button></a>';
             }
             ?>
+
+
         </div>
 
 

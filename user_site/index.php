@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $conn = new  mysqli('localhost', 'root', '', 'product');
 
 $userLoggedIn = isset($_SESSION['user_id']);
@@ -78,7 +78,7 @@ require_once("get_cart.php");
     </div>
     <div class="fe-box">
       <img src="../img/features/f3.png" alt="" />
-      <h6>Save Moneyg</h6>
+      <h6>Save Money</h6>
     </div>
     <div class="fe-box">
       <img src="../img/features/f4.png" alt="" />
@@ -133,8 +133,13 @@ require_once("get_cart.php");
             </div>
             <h4>৳<?php echo $row["price"] ?></h4>
           </div>
-          <button class="add normal" data-id="<?php echo $row["id"] ?>" data-name="<?php echo $row["name"] ?>" data-brand="<?php echo $row["brand"] ?>" data-image="<?php echo $row["image"] ?>" data-price="<?php echo $row["price"] ?>" data-rating="<?php echo $row["rating"] ?>">Add to Cart</button>
-
+          <?php
+          if (!$userLoggedIn) {
+            echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button></a>';
+          } else {
+            echo '<button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button>';
+          }
+          ?>
         </div>
       <?php
 
@@ -184,7 +189,13 @@ require_once("get_cart.php");
             </div>
             <h4>৳<?php echo $row["price"] ?></h4>
           </div>
-          <button class="add normal" data-id="<?php echo $row["id"] ?>" data-name="<?php echo $row["name"] ?>" data-brand="<?php echo $row["brand"] ?>" data-image="<?php echo $row["image"] ?>" data-price="<?php echo $row["price"] ?>" data-rating="<?php echo $row["rating"] ?>">Add to Cart</button>
+          <?php
+          if (!$userLoggedIn) {
+            echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button></a>';
+          } else {
+            echo '<button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button>';
+          }
+          ?>
         </div>
 
       <?php

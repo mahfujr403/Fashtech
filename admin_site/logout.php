@@ -4,4 +4,4 @@ session_start();
 session_unset();
 session_destroy();
 
-header('location:login_page.php');
+header('location:../user_site/index.php');
