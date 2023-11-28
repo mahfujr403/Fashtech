@@ -53,7 +53,13 @@ $cartItemCount = mysqli_num_rows($item);
                         <img src="../img/people/1.png" width="35px">
                     </a>
                     <div class="admin-dropdown">
-                        <a href="../admin_site/logout.php">Log Out</a>
+                        <?php
+                        if($userLoggedIn){
+                          echo  '<a href="../admin_site/logout.php">Log Out</a>';
+                        }elseif(!$userLoggedIn){
+                           echo  '<a href="/user_site/user_authorize/user_login.php">Log In</a>';
+                        }
+                        ?>
                         <a href="../admin_site/login_page.php">Continue as Admin</a>
                     </div>
                 </li>
