@@ -94,3 +94,33 @@ input {
 #close-message {
     cursor: pointer;
 }
+
+
+/* User Profile Section styles */
+.user-profile {
+    margin-left: 250px; /* Adjust based on your navbar width */
+    padding: 20px;
+}
+
+.user-details p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Tooltip styles (you can customize as needed) */
+.tooltip {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+/* Hover effect for tooltips */
+.nav_list li:hover .tooltip {
+    display: block;
+}

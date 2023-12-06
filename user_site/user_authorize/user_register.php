@@ -1,6 +1,9 @@
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
         $email = $_POST['email'];
+        $contact = $_POST['contact'];
         $password = $_POST['password'];
         $confirmPassword = $_POST['confirm_password'];
 
@@ -22,7 +25,7 @@
                 $message = "Email address is already registered.";
             } else {
 
-                $insertQuery = "INSERT INTO user_info (email, password) VALUES ('$email', '$hashedPassword')";
+                $insertQuery = "INSERT INTO user_info (first_name, last_name, email, contact, password) VALUES ('$fname','$lname', '$email', '$contact', '$hashedPassword')";
                 if ($conn->query($insertQuery) === TRUE) {
                     $message = "Registration successful!";
                     header("location:user_login.php??message=Registration Successful");
@@ -61,8 +64,20 @@
             <?php endif; ?>
             <form action="user_register.php" method="post">
                 <div class="form-group">
+                    <label for="fname">First Name:</label>
+                    <input type="text" name="fname" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name:</label>
+                    <input type="text" name="lname" required>
+                </div>
+                <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact No:</label>
+                    <input type="number" name="contact" required>
                 </div>
 
                 <div class="form-group">
