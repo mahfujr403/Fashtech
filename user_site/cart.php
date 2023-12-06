@@ -15,7 +15,6 @@ $cartItemCount = mysqli_num_rows($item);
 
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +41,7 @@ $cartItemCount = mysqli_num_rows($item);
                     <a class="active" href="cart.php">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <?php
-                        if ($cartItemCount > 0) {
+                        if ($cartItemCount > 0 && $userLoggedIn) {
                             echo '<span class="count">' . $cartItemCount . '</span>';
                         }
                         ?>
@@ -54,10 +53,10 @@ $cartItemCount = mysqli_num_rows($item);
                     </a>
                     <div class="admin-dropdown">
                         <?php
-                        if($userLoggedIn){
-                          echo  '<a href="../admin_site/logout.php">Log Out</a>';
-                        }elseif(!$userLoggedIn){
-                           echo  '<a href="/user_site/user_authorize/user_login.php">Log In</a>';
+                        if ($userLoggedIn) {
+                            echo  '<a href="../admin_site/logout.php">Log Out</a>';
+                        } elseif (!$userLoggedIn) {
+                            echo  '<a href="/user_site/user_authorize/user_login.php">Log In</a>';
                         }
                         ?>
                         <a href="../admin_site/login_page.php">Continue as Admin</a>
@@ -157,7 +156,7 @@ $cartItemCount = mysqli_num_rows($item);
             </table>
             <?php
             if ($userLoggedIn && mysqli_num_rows($item) > 0) {
-                echo '<a href="index.php"> <button class="normal">Proceed to Checkout</button></a>';
+                echo '<a href="payment.php"> <button class="normal">Proceed to Checkout</button></a>';
             } elseif (!$userLoggedIn && mysqli_num_rows($item) > 0) {
                 echo '<a href="user_authorize/user_login.php"> <button class="normal">Login to Checkout</button></a>';
             }

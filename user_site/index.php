@@ -41,7 +41,7 @@ require_once("get_cart.php");
           <a href="cart.php">
             <i class="fa-solid fa-bag-shopping"></i>
             <?php
-            if ($cartItemCount > 0) {
+            if ($cartItemCount > 0 && $userLoggedIn) {
               echo '<span class="count">' . $cartItemCount . '</span>';
             }
             ?>

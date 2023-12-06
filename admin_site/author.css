@@ -1,126 +1,128 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .submit {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .submit:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
-
 .message {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 5px;
-    font-weight: bold;
-     text-align: center;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .success {
-    background-color: #4CAF50;
-    color: #fff;
+  background-color: #4caf50;
+  color: #fff;
 }
 
 .error {
-    background-color: #f44336;
-    color: #fff;
+  background-color: #f44336;
+  color: #fff;
 }
 
 /* Add this to your CSS file */
 .update-message {
- 
   width: 100%;
   height: 40px;
-    color: rgb(208, 16, 16);
-    font-weight: bold;
-    background-color: #DFF2BF;
-    display: flex;
-   justify-content: start;  
+  color: rgb(208, 16, 16);
+  font-weight: bold;
+  background-color: #dff2bf;
+  display: flex;
+  justify-content: start;
 }
 
-.update-message span{
+.update-message span {
   padding-top: 12px;
   padding-left: 2%;
 }
-.update-message p{
+.update-message p {
   margin-top: 12px;
   padding-left: 15%;
   text-align: center;
 }
 #close-message {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 /* User Profile Section styles */
 .user-profile {
-    margin-left: 250px; /* Adjust based on your navbar width */
-    padding: 20px;
+  margin-left: 250px; /* Adjust based on your navbar width */
+  padding: 20px;
 }
 
 .user-details p {
-    margin-bottom: 10px;
-    font-size: 16px;
+  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 /* Tooltip styles (you can customize as needed) */
 .tooltip {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    background: #333;
-    color: white;
-    padding: 5px;
-    font-size: 14px;
-    display: none;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  color: white;
+  padding: 5px;
+  font-size: 14px;
+  display: none;
 }
 
 /* Hover effect for tooltips */
 .nav_list li:hover .tooltip {
+  display: block;
+}
+
+
+.payment{
     display: block;
 }

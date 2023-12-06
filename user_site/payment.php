@@ -1,16 +1,14 @@
 <?php
+session_start();
 
-$conn = new  mysqli('localhost', 'root', '', 'others');
+$conn = new mysqli('localhost', 'root', '', 'product');
+
 $userLoggedIn = isset($_SESSION['user_id']);
 
-$sql = "SELECT * FROM contact_page";
-$item  = $conn->query($sql);
+$sql_cart = "SELECT * FROM cart";
+$item  = $conn->query($sql_cart);
 
-
-$sql1 = "SELECT * FROM cp_people";
-$people  = $conn->query($sql1);
-
-require_once("get_cart.php")
+$cartItemCount = mysqli_num_rows($item);
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +19,11 @@ require_once("get_cart.php")
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fashtech</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../admin_site/author.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
 </head>
 
-<body>
+<body class="payment">
     <section id="header">
         <a href="index.php"><img src="../img/logo.png" class="logo" alt /></a>
 
@@ -34,12 +33,12 @@ require_once("get_cart.php")
                 <li><a href="shop.php"> Shop</a></li>
                 <li><a href="blog.php"> Blog</a></li>
                 <li><a href="about.php"> About</a></li>
-                <li><a class="active" href="contact.php"> Contact</a></li>
+                <li><a href="contact.php"> Contact</a></li>
                 <li>
-                    <a href="cart.php">
+                    <a class="active" href="cart.php">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <?php
-                        if ($cartItemCount > 0 && $userLoggedIn) {
+                        if ($cartItemCount > 0) {
                             echo '<span class="count">' . $cartItemCount . '</span>';
                         }
                         ?>
@@ -64,82 +63,38 @@ require_once("get_cart.php")
         </div>
     </section>
 
-    <section id="page-header" class="about-header">
-        <h2>#We Are Here</h2>
-        <p>LEAVE A MESSAGE, We love to hear from you!</p>
-    </section>
+    <div class="container">
+        <h3 style="text-align: center;">Delivery Address</h3>
 
-    <section id="contact-details" class="section-p1">
-        <div class="details">
-            <span>GET IN TOUCH</span>
-            <h2>Visit one of our outlate locations or contact us today</h2>
-            <h3>Head Office</h3>
-            <div>
-                <?php
-                while ($row = mysqli_fetch_assoc($item)) {
-                ?>
-                    <li>
-                        <?php echo $row["icon"] ?>
-                        <p><?php echo $row["address"] ?></p>
-                    </li>
-                <?php
-                }
-                ?>
+        <form action="index.php" method="post" onsubmit="return redirectToIndex()">
+            <div class="form-group">
+                <label for="HouseNo">House No:</label>
+                <input type="text" name="fname" required>
             </div>
-        </div>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3634.
-                    23910368289!2d88.59932701142266!3d24.372984278160043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
-                    1!3m3!1m2!1s0x39fbefad023fd3b5%3A0x91e5843fe8317ba2!2sTheme%20Omor%20Plaza!5e0!3m2!1sen!2sbd!4v1699691218113!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-    </section>
+            <div class="form-group">
+                <label for="Street">Street :</label>
+                <input type="text" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="landmark">Landmark:</label>
+                <input type="text" name="land" required>
+            </div>
+            <div class="form-group">
+                <label for="Area">Area :</label>
+                <input type="text" name="area" required>
+            </div>
 
-    <section id="form-details" class="section-p1">
-        <form action="">
-            <span>LEAVE A MESSAGE</span>
-            <h2>We love to hear from you</h2>
-            <input type="text" placeholder="Your name">
-            <input type="email" placeholder="Your email">
-            <input type="text" placeholder="subject">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Your message"></textarea>
-            <button class="normal">Submit</button>
+            <div class="form-group">
+                <label for="District">District:</label>
+                <input type="text" name="dis" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Place Order" class="submit">
+            </div>
+
         </form>
-
-
-        <div class="people">
-            <div>
-                <?php
-                while ($row = mysqli_fetch_assoc($people)) {
-                ?>
-                    <div>
-                        <img src="../<?php echo $row["image"] ?>" alt="">
-                        <p><span><?php echo $row["name"] ?></span> <?php echo $row["designation"] ?>
-                            <br> <?php echo $row["phone"] ?> <br> <?php echo $row["email"] ?>
-                        </p>
-                    </div>
-
-                <?php
-                }
-                ?>
-            </div>
-
-    </section>
-
-    <section id="newsletter" class="section-p1">
-        <div class="newstext">
-            <h4>Sign Up For Newsletters</h4>
-            <p>
-                Get e-mail updates about our leatest shop and
-                <span>special offers.</span>
-            </p>
-        </div>
-        <div class="form">
-            <input type="email" placeholder="Your e-mail address" />
-            <button class="normal">Sign Up</button>
-        </div>
-    </section>
-
+    </div>
 
 
     <footer class="section-p1">
@@ -163,17 +118,17 @@ require_once("get_cart.php")
 
         <div class="col">
             <h4>About</h4>
-            <a href="about.php">About us</a>
+            <a href="#">About us</a>
             <a href="#">Delivary Information</a>
             <a href="#">Privacy ploicy</a>
             <a href="#">Trams & contidions</a>
-            <a href="contact.php">Contact us</a>
+            <a href="#">Contact us</a>
         </div>
 
         <div class="col">
             <h4>My Account</h4>
             <a href="#">Sign In</a>
-            <a href="cart.php">View Cart</a>
+            <a href="#">View Cart</a>
             <a href="#">My Wishlist</a>
             <a href="#">Track my order</a>
             <a href="#">Help</a>
@@ -193,7 +148,17 @@ require_once("get_cart.php")
         </div>
     </footer>
 
-    <script src="get_cart.js"></script>
+
+    <script src="cart.js"></script>
+
+    <script>
+        function redirectToIndex() {
+            // You can add any additional logic here before redirection
+            alert('Order placed successfully!'); // You can remove this line
+            window.location.href = 'confirmation.php';
+            return false; // Prevent form submission (if needed)
+        }
+    </script>
 </body>
 
 </html>

@@ -67,6 +67,30 @@ button.white {
   outline: none;
   transition: 400ms;
 }
+.confirmation-container {
+  text-align: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.confirmation-icon {
+  font-size: 80px;
+  color: #088178;
+  margin-bottom: 20px; 
+}
+
+.confirmation-message {
+  font-size: 24px;
+  font-weight: 700;
+  color: #088178;
+  margin-bottom: 20px; 
+}
+
+.confirmation-details {
+  font-size: 18px;
+  color: #465b52;
+  margin-bottom: 30px; 
+}
 
 body {
   width: 100%;
@@ -111,9 +135,8 @@ body {
   transition: 300ms ease;
 }
 
-
 #navbar li a .count {
-  display:inline-block;
+  display: inline-block;
   background-color: #08811e;
   color: #fff;
   border-radius: 50%;
@@ -124,7 +147,6 @@ body {
   right: 7px;
   font-size: 12px;
 }
-
 
 #navbar li a:hover,
 #navbar li a.active {
@@ -142,36 +164,36 @@ body {
 }
 
 .admin-dropdown {
-    display: none;
-    position: absolute;
-    width: 200px;
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    margin-left: -65px;
-    border-radius: 10px;
-  }
+  display: none;
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  margin-left: -65px;
+  border-radius: 10px;
+}
 
-  .admin-dropdown a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-decoration: none;
-  }
+.admin-dropdown a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
 
-  .admin-dropdown a:hover {
-    background-color: #f1f1f1;
-     border-radius: 10px;
-  }
+.admin-dropdown a:hover {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
 
-  .admin-panel-container {
-    position: relative;
-    display: inline-block;
-  }
+.admin-panel-container {
+  position: relative;
+  display: inline-block;
+}
 
-  .admin-panel-container:hover .admin-dropdown {
-    display: block;
-  }
+.admin-panel-container:hover .admin-dropdown {
+  display: block;
+}
 
 /* Home Page */
 #hero {
@@ -344,7 +366,7 @@ body {
 #subtotal button:active,
 #coupon button:active,
 #cart table tbody td button:active,
-#prodetails .single-pro-details button:active  {
+#prodetails .single-pro-details button:active {
   font-size: 13px;
   background-color: #041e42;
 }
@@ -614,7 +636,6 @@ footer a:hover {
 
 /* single product */
 
-
 .small-img-group {
   display: flex;
   justify-content: space-between;
@@ -660,7 +681,6 @@ footer a:hover {
   padding-left: 10px;
   font-size: 16px;
   margin-right: 10px;
-
 }
 
 #prodetails .single-pro-details input :focus {
@@ -951,8 +971,6 @@ footer a:hover {
   border: none;
 }
 
-
-
 #cart table tbody tr td {
   padding: 15px;
 }
@@ -961,7 +979,7 @@ footer a:hover {
   font-size: 13px;
 }
 
-#cart table tbody tr td span{
+#cart table tbody tr td span {
   font-size: 18px;
   font-weight: 500;
 }
@@ -992,7 +1010,7 @@ footer a:hover {
 
 #coupon button,
 #subtotal button,
-#prodetails .single-pro-details button{
+#prodetails .single-pro-details button {
   background-color: #088178;
   color: #fff;
   padding: 12px 20px;
@@ -1019,9 +1037,7 @@ footer a:hover {
   padding: 10px;
   font-size: 13px;
 }
-#subtotal button{
+#subtotal button {
   margin-left: 33%;
 }
-
-
 

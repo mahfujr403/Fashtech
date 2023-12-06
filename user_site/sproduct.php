@@ -64,7 +64,7 @@ require_once("get_cart.php")
           <a href="cart.php">
             <i class="fa-solid fa-bag-shopping"></i>
             <?php
-            if ($cartItemCount > 0) {
+            if ($cartItemCount > 0 && $userLoggedIn) {
               echo '<span class="count">' . $cartItemCount . '</span>';
             }
             ?>
@@ -128,11 +128,12 @@ require_once("get_cart.php")
 
       <?php
       if (!$userLoggedIn) {
-        echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button></a>';
+        echo '<a href="user_authorize/user_login.php"> <button class="add normal" data-id="' . $product["id"] . '" data-name="' . $product["name"] . '" data-brand="' . $product["brand"] . '" data-image="' . $product["image"] . '" data-price="' . $product["price"] . '" data-rating="' . $product["rating"] . '">Add to Cart</button></a>';
       } else {
-        echo '<button class="add normal" data-id="' . $row["id"] . '" data-name="' . $row["name"] . '" data-brand="' . $row["brand"] . '" data-image="' . $row["image"] . '" data-price="' . $row["price"] . '" data-rating="' . $row["rating"] . '">Add to Cart</button>';
+        echo '<button class="add normal" data-id="' . $product["id"] . '" data-name="' . $product["name"] . '" data-brand="' . $product["brand"] . '" data-image="' . $product["image"] . '" data-price="' . $product["price"] . '" data-rating="' . $product["rating"] . '">Add to Cart</button>';
       }
       ?>
+
     </div>
   </section>
 
